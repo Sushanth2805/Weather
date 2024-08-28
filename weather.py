@@ -1,10 +1,11 @@
 import streamlit as st
 import requests
 
-st.title("Weather App with WeatherAPI")
+st.title("Know thy wather")
 st.write("Enter the city name to get the current weather information.")
 
 city_name = st.text_input("City Name", "")
+api_key=st.secrets['api_key']
 
 def get_weather(city_name, api_key):
     url = f"http://api.weatherapi.com/v1/current.json?key={api_key}&q={city_name}&aqi=no"
@@ -18,7 +19,7 @@ def get_weather(city_name, api_key):
         st.error("An error occurred while fetching the data.")
         return None
 
-api_key = "e92f592473a8443bac571302242808"  # Replace with your actual API key
+ # Replace with your actual API key
 
 if city_name:
     data = get_weather(city_name, api_key)
