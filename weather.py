@@ -1,7 +1,7 @@
 import streamlit as st
 import requests
 
-st.title("Know thy wather")
+st.title("Know thy weather")
 st.write("Enter the city name to get the current weather information.")
 
 city_name = st.text_input("City Name", "")
